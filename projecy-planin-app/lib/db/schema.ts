@@ -7,9 +7,9 @@ export const tasks = sqliteTable(
     title: text("title").notNull(),
     description: text("description"),
     status: text("status", { enum: ["todo", "doing", "done"] }).default("todo"),
-    priority: text("priority", { enum: ["low", "medium", "high"] }).default(
-      "medium"
-    ),
+    priority: text('priority', { 
+      enum: ['low', 'medium', 'high'] 
+    }).notNull().default('medium'),
     assignee: text("assignee"),
     start_date: text("start_date"),
     end_date: text("end_date"),
